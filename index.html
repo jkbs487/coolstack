@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>CoolStack</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- Highlighter -->
+    <link rel="stylesheet" href="plugins/highlight/styles/monokai.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed">
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="index.html" class="nav-link">Home</a>
+      </li>
+    </ul>
+        <!-- SEARCH FORM -->
+        <form class="form-inline ml-3">
+          <div class="input-group input-group-sm">
+            <input class="form-control form-control-navbar" type="search" oninput="searchArticle(this.value)" placeholder="搜索题目" aria-label="Search">
+            <div class="input-group-append">
+              <button class="btn btn-navbar" type="submit" onclick="searchArticle(this.value)">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+  </nav>
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="index.html" class="brand-link">
+      <img src="dist/img/AdminLTELogo.png"
+           alt="AdminLTE Logo"
+           class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+      <span class="brand-text font-weight-light">CoolStack</span>
+    </a>
+       <!-- Sidebar -->
+       <div class="sidebar">
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <li class="nav-item has-treeview">
+              <a href="page.html" class="nav-link" id="leetCodeNav"> 
+                <i class="nav-icon fas fa-book"></i>
+                <p>
+                  LeetCode题解
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview" id="leetCodeMenu">
+                
+              </ul>
+            </li>
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link" id="codeLanguageNav"> 
+                <i class="nav-icon fas fa-code"></i>
+                <p>
+                  编程语言
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview" id="codeLanguageMenu">
+                
+              </ul>
+            </li>
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link" id="reprintNav"> 
+                <i class="nav-icon fas fa-code"></i>
+                <p>
+                  转载
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview" id="reprintMenu">
+                
+              </ul>
+            </li>
+        </nav>
+        <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 id="itemTitle">CoolStack</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12" id="articleArea">
+            <!-- Main content -->
+            <div class="invoice p-3 mb-3">
+              <!-- title row -->
+              <div class="row">
+                <div class="col-12">
+                  <h4 id="articleTitle">
+                  </h4>
+                </div>
+                <!-- /.col -->
+              </div>
+              <!-- info row -->
+              <div class=" invoice-info" id="articleContent"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-body card-primary card-outline">
+                <h5 class="card-title">程序员入门指南</h5>
+                <p class="card-text"><br>
+                  Python语言：<br>
+                  <a href="https://book.douban.com/subject/26836700/">《Python编程快速上手》</a><br>
+                  <a href="https://book.douban.com/subject/26829016/">《Python编程：从入门到实践》</a><br>
+                  JavaScript:<br>
+                  <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript">MDN JavaScript 教程</a><br>
+                  <a href="https://www.liaoxuefeng.com/wiki/1022910821149312">JavaScript 全栈教程（廖雪峰）</a><br>
+                  Linux入门：<br>
+                  <a href="https://www.w3cschool.cn/linux/">Linux 教程</a><br>
+                  Visual Studio Code:<br>
+                  <a href="https://www.gitbook.com/?utm_source=legacy&utm_medium=redirect&utm_campaign=close_legacy">VSCode 教程</a><br>
+                  Web开发:<br>
+                  <a href="https://developer.mozilla.org/zh-CN/docs/Learn/Getting_started_with_the_web">MDN 的 Web 开发入门</a><br>
+                  前端：
+                  <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML">HTML 文档</a>
+                  <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS">CSS 文档</a><br>
+                  后端：
+                  <a href="https://www.php.net/manual/zh/">PHP 的官网文档</a><br>
+                  编程技巧：<br>
+                  <a href="https://book.douban.com/subject/1477390/">《代码大全》</a><br>
+                </p>
+              </div>
+            </div>
+
+            <div class="card card-primary card-outline">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up the bulk of the card's
+                  content.
+                </p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+              </div>
+            </div><!-- /.card -->
+          </div>
+          <!-- /.col-md-6 -->
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="m-0">编程修养</h5>
+              </div>
+              <div class="card-body">
+                <a class="card-text" href="http://blog.thefirehoseproject.com/posts/learn-to-code-and-be-self-reliant/  ">The Key To Accelerating Your Coding Skills</a>
+
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <h5 class="m-0">本站搭建环境</h5>
+              </div>
+              <div class="card-body">
+                <h6 class="card-title"></h6>
+
+                <p class="card-text">Apache+</p>
+              </div>
+            </div>
+          </div>
+          <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->    
+            </div>
+            <!-- /.invoice -->
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+    <a id="back-to-top" href="#" class="btn btn-primary back-to-top" role="button" aria-label="Scroll to top">
+      <i class="fas fa-chevron-up"></i>
+    </a>
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer no-print">
+    <div class="float-right d-none d-sm-block">
+      <b>良晨的技术站</b> 
+    </div>
+    <strong>Theme <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="dist/js/demo.js"></script>
+<!-- Marked -->
+<script src="plugins/marked/marked.min.js"></script>
+<!-- Highlight -->
+<script src="plugins/highlight/highlight.pack.js"></script>
+
+<script>  
+  $("#articleArea").hide();
+  marked.setOptions({
+    renderer: new marked.Renderer(),
+    highlight: function(code, language) {
+      const validLanguage = hljs.getLanguage(language) ? language : 'plaintext';
+      return hljs.highlight(validLanguage, code).value;
+    },
+    pedantic: false,
+    gfm: true,
+    table: true,
+    breaks: false,
+    sanitize: false,
+    smartLists: true,
+    smartypants: true,
+    xhtml: false
+  });
+
+  function articleDisplay(id){  
+    $("#articleArea").show();
+    $.get("cgi/articles.py?type=article&id="+id, function(data){
+      var articleMessage = jQuery.parseJSON(data);
+      $("#itemTitle").html(articleMessage["class"]);
+      var articleContent = marked(articleMessage["content"]);
+      articleContent = articleContent.replace(/<pre>/g, "<pre class='hljs'>");
+      articleContent = articleContent.replace(/<h1/g, "<br><h1 style=\"font-weight: 600;\"");
+      articleContent = articleContent.replace(/<h2/g, "<br><h2 style=\"font-weight: 600;\"");
+      articleContent = articleContent.replace(/<h3/g, "<br><h3 style=\"font-weight: 600;\"");
+      articleContent = articleContent.replace(/<h4/g, "<br><h4 style=\"font-weight: 600;\"");
+      articleContent = articleContent.replace(/<h5/g, "<br><h5 style=\"font-weight: 600;\"");
+      articleContent = articleContent.replace(/<\/h1>/g, "</b></h1><br>");
+      articleContent = articleContent.replace(/<\/h2>/g, "</b></h2><br>");
+      articleContent = articleContent.replace(/<\/h3>/g, "</b></h3><br>");
+      articleContent = articleContent.replace(/<\/h4>/g, "</b></h4><br>");
+      articleContent = articleContent.replace(/<\/h5>/g, "</b></h5><br>");
+      $("#articleContent").html(articleContent);
+      $("#articleTitle").html(
+        "<h4>"+
+          "<i class=\"fas fa-globe\"></i>"+ articleMessage["title"] +
+          "<small class=\"float-right\">日期: "+articleMessage["date"]+"</small>"+
+        "</h4>"
+        );
+    });
+  }
+
+  var classMap = {"leetcode题解":"leetCodeMenu", "转载": "reprintMenu"};
+
+  $.get("cgi/articles.py?type=title", function(data){
+    var articleMessages = jQuery.parseJSON(data);
+    var titles = articleMessages["title"];
+    var ids = articleMessages["id"];
+    var classes = articleMessages["class"];
+    for(var i = 0; i < titles.length; i++) {
+      $("#"+classMap[classes[i]]).append(
+        "<li class=\"nav-item\">"+
+          "<a href=\"#\" class=\"nav-link\" name=\""+ids[i]+"\" onclick=\"articleDisplay(this.name);\">"+
+            "<i class=\"far fa-circle nav-icon\"></i>"+
+              "<p>"+titles[i]+"</p>"+
+          "</a>"+
+        "</li>"
+      );
+    }
+  });
+
+  function searchArticle(title) {
+    $("#indexArea").hide();
+    $("#articleArea").show();
+    $.get("cgi/articles.py?type=search&title="+title, function(data){
+      var articleMessages = jQuery.parseJSON(data);
+      var titles = articleMessages["title"];
+      var ids = articleMessages["id"];
+      $("#articleTitle").html("");
+      $("#articleContent").html("");
+      $("#itemTitle").html("搜索");
+      for(var i = 0; i < titles.length; i++) {
+        $("#articleContent").append(
+          "<div class=\"callout callout-info\">"+
+          "<h5><a href=\"#\" name=\""+ids[i]+"\" onclick=\"articleDisplay(this.name)\">"+titles[i]+"</a></h5>"+
+          "</div>"
+        );
+      }
+    });
+  }
+</script>
+</body>
+</html>
